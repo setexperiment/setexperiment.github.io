@@ -185,7 +185,7 @@ function checkSelectedSet() {
         //    }
         //}
         checkRemaining();
-        syncWait(10000)
+        syncWait(3000)
     }
 }
 

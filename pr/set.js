@@ -13,6 +13,8 @@ const syncWait = ms => {
 var points = 0;
 document.getElementById("deckCount").innerHTML = points;
 
+var snd = new Audio("scorepoints.wav");
+
 var update_timer = setInterval(function() {
     if (final_time === null)  {
         var now = new Date().getTime();
@@ -181,9 +183,10 @@ function checkSelectedSet() {
         document.getElementById("deckCount").innerHTML = points;
         stat.innerHTML = "Is a SET";
         stat.style.color = "green";
-        alert("Correct, nice job!")
+        snd.play();
         replaceCards(selected);
     } else {
+        stat.innerHTML = "";
         //stat.innerHTML = "Is not a SET";
         //stat.style.color = "red";
         //for (var i = 0; i < 4; i++) {
